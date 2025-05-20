@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejs page </title>
+</head>
+<body>
+    <p>hey welcome</p>
+    <form action="/create" method="post">
+        <input type="text" placeholder="type your task here .." name ="name">
+        <textarea name="details" id="" placeholder="give details to your tasks " ></textarea>
+        <input type="submit" name="" id="" value="create task">
+    </form>
+    <main>
+        <div >
+            <%if(files.length>0){ %>
+                <%files.forEach(file=>{ %>
+                    <p><%= file %></p>
+                     <a href="/readmore/<%= file %>">Read more</a>
+                 <% }) %>
+            <% } else { %>
+            <p>No task yet to do .</p>
+            <% } %>
+        </div>
+    </main>
+</body>
+</html>
